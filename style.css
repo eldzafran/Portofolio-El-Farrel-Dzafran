@@ -55,6 +55,7 @@
       color: #333;
       overflow-x: hidden;
     }
+    html { overflow-x: hidden; }
     
     .navbar {
       background-color: var(--primary-color);
@@ -451,6 +452,10 @@
       .section-title {
         font-size: 1.8rem;
       }
+      /* Prevent decorative background from causing horizontal scroll on small screens */
+      .about-bg {
+        right: 0;
+      }
       
       .social-icon {
         width: 50px;
@@ -462,6 +467,9 @@
       .contact-form .btn-primary {
         font-size: 1rem;
         padding: 15px 25px;
+        /* Ensure very long strings (emails) can wrap and never create overflow */
+        overflow-wrap: anywhere;
+        word-break: break-word;
       }
     }
     
@@ -486,6 +494,8 @@
       .contact-form .btn-primary {
         font-size: 0.9rem;
         padding: 12px 20px;
+        overflow-wrap: anywhere;
+        word-break: break-word;
       }
       
       .contact-form h4 {
